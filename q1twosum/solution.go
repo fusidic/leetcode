@@ -1,4 +1,4 @@
-package 1_two_sum
+package q1twosum
 
 // Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
@@ -10,7 +10,6 @@ package 1_two_sum
 
 // Because nums[0] + nums[1] = 2 + 7 = 9,
 // return [0, 1].
-
 
 func twoSum(nums []int, target int) []int {
 	numsLen := len(nums)
