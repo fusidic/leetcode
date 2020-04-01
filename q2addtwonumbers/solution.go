@@ -10,7 +10,7 @@ package q2addtwonumbers
 *	Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 *	Output: 7 -> 0 -> 8
 *	Explanation: 342 + 465 = 807.
-*/
+ */
 
 /**
  * Definition for singly-linked list.
@@ -21,13 +21,17 @@ package q2addtwonumbers
  */
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	p := l1
-	for p.Next != nil {
-		p.Val += l2.Val
-		p.Val = p.Val % 10
-		p = p.Next
+	p1 := l1
+	p2 := l2
+	for true {
+		p1.Val += p2.Val
+		p1.Val = p1.Val % 10
+		p1 = p1.Next
+		p2 = p2.Next
+		if p1.Next == nil {
+			break
+		}
 	}
-	
+	return l1
+	// fmt.Printf(format string, a ...interface{})
 }
-
-
