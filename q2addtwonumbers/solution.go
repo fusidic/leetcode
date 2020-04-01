@@ -19,18 +19,43 @@ package q2addtwonumbers
  *     Next *ListNode
  * }
  */
+// type ListNode structures.ListNode
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	p1 := l1
 	p2 := l2
+	var flag int
 	for true {
+		p1.Val += flag
 		p1.Val += p2.Val
+		flag = p1.Val / 10
 		p1.Val = p1.Val % 10
-		p1 = p1.Next
-		p2 = p2.Next
-		if p1.Next == nil {
+		if p1.Next == nil && p2.Next != nil {
+			p1.Next = &ListNode{
+				Val:  0,
+				Next: nil,
+			}
+		} else if p1.Next != nil && p2.Next == nil {
+			p2.Next = &ListNode{
+				Val:  0,
+				Next: nil,
+			}
+		} else if p1.Next == nil && p2.Next == nil {
+			if flag == 0 {
+				break
+			}
+			p1.Next = &ListNode{
+				Val:  1,
+				Next: nil,
+			}
 			break
 		}
+		p1 = p1.Next
+		p2 = p2.Next
 	}
 	return l1
 	// fmt.Printf(format string, a ...interface{})
