@@ -19,7 +19,8 @@ package q2addtwonumbers
  *     Next *ListNode
  * }
  */
-// type ListNode structures.ListNode
+
+// ListNode ListNode fuck you
 type ListNode struct {
 	Val  int
 	Next *ListNode
