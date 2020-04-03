@@ -1,13 +1,7 @@
-package main
+package q5
 
-import (
-	"fmt"
-)
+func longestPalindrome3(s string) string {
 
-func main() {
-	s := "babad"
-	s = pretreatment(s)
-	fmt.Println(s)
 }
 
 func pretreatment(s string) string {
@@ -22,6 +16,6 @@ func pretreatment(s string) string {
 	for i := 0; i < len; i++ {
 		res = append(res, cue[1], runes[i])
 	}
-	res = append(res, cue[1:]...)
+	res = append(res, cue[1], cue[2])
 	return string(res)
 }
