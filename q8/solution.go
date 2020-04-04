@@ -1,16 +1,11 @@
-package main
+package q8
 
 import (
-	"fmt"
 	"math"
 	"strings"
 )
 
-func main() {
-	x := "-91283472332"
-	fmt.Println(myAtoi(x))
-}
-
+// This is a really stupid method
 func myAtoi(str string) int {
 	max := 0x7fffffff
 	min := -0x80000000
