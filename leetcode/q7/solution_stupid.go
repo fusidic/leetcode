@@ -1,4 +1,4 @@
-package q7
+package leetcode
 
 import (
 	"math"

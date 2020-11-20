@@ -1,4 +1,4 @@
-package q3longestsubstring
+package leetcode
 
 import (
 	"testing"

@@ -1,4 +1,4 @@
-package q1twosum
+package leetcode
 
 import (
 	"testing"

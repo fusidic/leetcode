@@ -1,4 +1,4 @@
-package q7
+package leetcode
 
 func reverse2(x int) int {
 	max := 0x7fffffff

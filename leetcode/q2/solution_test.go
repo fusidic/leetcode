@@ -1,4 +1,4 @@
-package q2addtwonumbers
+package leetcode
 
 import (
 	"testing"

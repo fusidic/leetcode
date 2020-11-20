@@ -1,4 +1,4 @@
-package q5
+package leetcode
 
 func longestPalindrome1(s string) string {
 	i := 0

@@ -1,4 +1,4 @@
-package q6
+package leetcode
 
 import "strings"
 
