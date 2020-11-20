@@ -1,16 +1,10 @@
-package main
+package q10
 
 import (
 	"fmt"
 	"log"
 	"strings"
 )
-
-func main() {
-	s := "aab"
-	p := "a*b*c*"
-	fmt.Println(isMatch(s, p))
-}
 
 func debug(v ...interface{}) {
 	log.Println("mermaid:")
