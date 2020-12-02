@@ -1,4 +1,4 @@
-package q10
+package leetcode
 
 import (
 	"fmt"

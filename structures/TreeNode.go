@@ -19,7 +19,7 @@ func Tree2LeetArray(root *TreeNode) []int {
 	subtreeList := []*TreeNode{root}
 	for subtreeList != nil {
 		treeList = append(treeList, subtreeList...)
-		temp := getSubtreeList(subtreeList)
+		temp := getNextLevelList(subtreeList)
 		subtreeList = temp
 	}
 
@@ -35,7 +35,7 @@ func Tree2LeetArray(root *TreeNode) []int {
 	return res
 }
 
-func getSubtreeList(treeList []*TreeNode) []*TreeNode {
+func getNextLevelList(treeList []*TreeNode) []*TreeNode {
 	if treeList == nil {
 		return nil
 	}
@@ -43,6 +43,9 @@ func getSubtreeList(treeList []*TreeNode) []*TreeNode {
 	var subtreeList []*TreeNode
 	for i := 0; i < listLen; i++ {
 		if treeList[i] != nil {
+			if treeList[i].Val == NULL {
+				continue
+			}
 			subtreeList = append(subtreeList, treeList[i].Left)
 			subtreeList = append(subtreeList, treeList[i].Right)
 		}
@@ -74,4 +77,42 @@ func Tree2PreOrder(root *TreeNode) []int {
 	res = append(res, Tree2PreOrder(root.Left)...)
 	res = append(res, Tree2PreOrder(root.Right)...)
 	return res
+}
+
+// LeetArray2Tree transfer tree array to TreeNode
+func LeetArray2Tree(l []int) *TreeNode {
+	if len(l) == 0 {
+		return nil
+	} else if len(l)%2 == 0 {
+		// complement tail NULL if exists.
+		l = append(l, NULL)
+	}
+	treeList := []*TreeNode{}
+	// Found a rule bewteen PARENTS node and CHILD.
+	// During each cycle, it will found the CHILD nodes for index.
+	for i := 0; i < len(l); i++ {
+		if l[i] != NULL {
+			treeList = append(treeList, &TreeNode{
+				Val:   l[i],
+				Left:  nil,
+				Right: nil,
+			})
+		} else {
+			// When index is nil, apparently it's the end edge.
+			treeList = append(treeList, nil)
+		}
+
+	}
+	index := 0
+	for j := 1; j < len(l); {
+		if l[index] != NULL {
+			treeList[index].Left = treeList[j]
+			treeList[index].Right = treeList[j+1]
+			index++
+			j += 2
+		} else {
+			index++
+		}
+	}
+	return treeList[0]
 }
