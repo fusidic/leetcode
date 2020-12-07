@@ -16,9 +16,7 @@ func recoverTree(root *structures.TreeNode) {
 	// 由于题目规定只需要交换一次
 	// 那么最根本的原因一定是因为 violate 中的末两位逆序
 	l := len(violate)
-	temp := violate[l-1].Val
-	violate[l-1].Val = violate[l-2].Val
-	violate[l-2].Val = temp
+	violate[l-1].Val, violate[l-2].Val = violate[l-2].Val, violate[l-1].Val
 }
 
 func checkBST(root *structures.TreeNode, pre **structures.TreeNode, violate *[]*structures.TreeNode) {
