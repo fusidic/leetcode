@@ -10,7 +10,9 @@ func pathSum(root *structures.TreeNode, sum int) [][]int {
 		return [][]int{}
 	}
 	res := make([][]int, 0)
-	getPathSum(root, sum, []int{}, &res)
+	// pre-allocating saves time.
+	valList := make([]int, 0, 8)
+	getPathSum(root, sum, valList, &res)
 	return res
 }
 
@@ -28,5 +30,7 @@ func getPathSum(root *structures.TreeNode, pathSum int, valList []int, res *[][]
 		getPathSum(root.Left, pathSum, valList, res)
 		getPathSum(root.Right, pathSum, valList, res)
 	}
+	// Yes, it really did.
+	// fmt.Printf("valList: %p %d \t res: %p %d\n", valList, valList, res, res)
 	valList = valList[:len(valList)-1]
 }
