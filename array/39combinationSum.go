@@ -10,9 +10,9 @@ func combinationSum(candidates []int, target int) [][]int {
 		}
 
 		if target == 0 {
-			// append
-			// res = append(res, append([]int{}, list...))
-			res = append(res, list)
+			// append 深拷贝
+			res = append(res, append([]int{}, list...))
+			// res = append(res, list)
 			return
 		}
 		// 不选
