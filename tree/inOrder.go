@@ -4,6 +4,7 @@ import (
 	"container/list"
 
 	"github.com/fusidic/leetcode/structures"
+	teststruc "github.com/halfrost/LeetCode-Go/structures"
 )
 
 func inorderTraversal(root *structures.TreeNode) []int {
@@ -25,4 +26,22 @@ func inorderTraversal(root *structures.TreeNode) []int {
 		}
 	}
 	return res
+}
+
+func inorderTraversal2(root *teststruc.TreeNode) []int {
+	res := make([]int, 0, 20)
+	var inOrder func(root *teststruc.TreeNode)
+	inOrder = func(root *teststruc.TreeNode) {
+		if root == nil {
+			return
+		}
+		inOrder(root.Left)
+		res = append(res, root.Val)
+		inOrder(root.Right)
+		return
+	}
+
+	inOrder(root)
+	return res
+
 }
