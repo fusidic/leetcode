@@ -1,14 +1,24 @@
 package sort
 
 // QuickSort ...
-func QuickSort(arr []int, left, right int) {
+func QuickSort(arr []int) []int {
+	partition(arr, 0, len(arr)-1)
+	return arr
+}
+
+func partition(arr []int, left, right int) {
+	if left >= right {
+		return
+	}
+
 	base := arr[left]
 	l, r := left, right
+
 	for true {
-		for l < right && arr[l] >= base {
+		for l < right && arr[l] <= base {
 			l++
 		}
-		for r > left && arr[r] <= base {
+		for r > left && arr[r] >= base {
 			r--
 		}
 		if l >= r {
@@ -17,6 +27,6 @@ func QuickSort(arr []int, left, right int) {
 		arr[l], arr[r] = arr[r], arr[l]
 	}
 	arr[left], arr[r] = arr[r], arr[left]
-	QuickSort(arr, left, r-1)
-	QuickSort(arr, r+1, right)
+	partition(arr, left, r-1)
+	partition(arr, r+1, right)
 }

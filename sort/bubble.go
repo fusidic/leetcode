@@ -1,7 +1,7 @@
 package sort
 
 // BubbleSort O(n)~O(n^2) stable
-func BubbleSort(arr []int) {
+func BubbleSort(arr []int) []int {
 	for i := 0; i < len(arr); i++ {
 		for j := 0; j < len(arr)-1-i; j++ {
 			if arr[j] > arr[j+1] {
@@ -9,4 +9,5 @@ func BubbleSort(arr []int) {
 			}
 		}
 	}
+	return arr
 }

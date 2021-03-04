@@ -1,3 +1,5 @@
+github.com/0xAX/go-algorithms v0.0.0-20201011072431-bb4e627657a9 h1:Mvqsm0LKZn5Y3oZ7lgaCIlf6sPpQujAveVDB5TvC7F4=
+github.com/0xAX/go-algorithms v0.0.0-20201011072431-bb4e627657a9/go.mod h1:aQUeBxnHJLnIG680qASHbe20gv0UHwCUGCT92MGORik=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/google/go-cmp v0.5.4 h1:L8R9j+yAqZuZjsqh/z+F1NCffTKKLShY6zXTItVIZ8M=
