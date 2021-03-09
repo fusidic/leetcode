@@ -19,10 +19,3 @@ func numSquares(n int) int {
 	}
 	return dp[n]
 }
-
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
