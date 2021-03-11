@@ -14,14 +14,15 @@ var funcs = []struct {
 	// {"shell", ShellSort},
 	// {"select", SelectSort},
 	// {"oddeven", OddEvenSort},
-	{"insert", InsertSort},
+	// {"insert", InsertSort},
 	// {"heap", HeapSort},
 	// {"gnome", GnomeSort},
 	// {"counting", CountingSort},
 	// {"comb", CombSort},
 	// {"cocktail", CocktailSort},
 	// {"bubble", BubbleSort},
-	// {"quick", QuickSort},
+	{"merge", MergeSort},
+	{"quick", quickSort0310},
 }
 
 func TestSort(t *testing.T) {
@@ -29,7 +30,7 @@ func TestSort(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			arr := utils.RandArray(10)
 
-			tt.f(arr)
+			arr = tt.f(arr)
 
 			if !sort.IntsAreSorted(arr) {
 				t.Errorf("%v is not sorted", arr)
