@@ -27,7 +27,7 @@ func threadTest() {
 		go worker(w, jobs, results)
 	}
 
-	// 这里我们发送 9 个 `jobs`，然后 `close` 这些通道
+	// 发送 9 个 `jobs`，然后 `close` 这些通道
 	// 来表示这些就是所有的任务了。
 	for j := 1; j <= 9; j++ {
 		jobs <- j
